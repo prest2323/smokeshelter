@@ -4,7 +4,7 @@ Live wildfire-smoke action planner for teens. NextStep Hacks 2026, Earth Forward
 (helping communities adapt to climate change + monitoring ecosystems).
 
 Live demo: https://prest2323.github.io/smokeshelter/ ·
-Demo video: https://files.catbox.moe/jks2eq.webm ·
+Demo video: https://files.catbox.moe/a0y23n.webm ·
 Devpost draft: ../DEVPOST-DRAFT-nextstep.md
 
 ## What it does
