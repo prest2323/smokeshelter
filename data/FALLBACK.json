@@ -1,0 +1,25 @@
+{
+  "city": "Seattle, WA",
+  "fetchedAt": "SAMPLE — cached smoke event for offline demo mode",
+  "note": "Realistic Sep smoke spike. Auto-loads if Open-Meteo fetch fails. UI labels this Demo cache.",
+  "readings": [
+    { "time": "2026-09-19T00:00", "pm25": 11, "usAqi": 47 },
+    { "time": "2026-09-19T01:00", "pm25": 14, "usAqi": 55 },
+    { "time": "2026-09-19T02:00", "pm25": 19, "usAqi": 66 },
+    { "time": "2026-09-19T03:00", "pm25": 28, "usAqi": 84 },
+    { "time": "2026-09-19T04:00", "pm25": 41, "usAqi": 113 },
+    { "time": "2026-09-19T05:00", "pm25": 63, "usAqi": 154 },
+    { "time": "2026-09-19T06:00", "pm25": 88, "usAqi": 172 },
+    { "time": "2026-09-19T07:00", "pm25": 117, "usAqi": 186 },
+    { "time": "2026-09-19T08:00", "pm25": 148, "usAqi": 199 },
+    { "time": "2026-09-19T09:00", "pm25": 176, "usAqi": 226 },
+    { "time": "2026-09-19T10:00", "pm25": 162, "usAqi": 210 },
+    { "time": "2026-09-19T11:00", "pm25": 131, "usAqi": 192 },
+    { "time": "2026-09-19T12:00", "pm25": 98, "usAqi": 178 },
+    { "time": "2026-09-19T13:00", "pm25": 71, "usAqi": 159 },
+    { "time": "2026-09-19T14:00", "pm25": 49, "usAqi": 132 },
+    { "time": "2026-09-19T15:00", "pm25": 33, "usAqi": 94 },
+    { "time": "2026-09-19T16:00", "pm25": 22, "usAqi": 72 },
+    { "time": "2026-09-19T17:00", "pm25": 16, "usAqi": 60 }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "smokeshelter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmokeShelter — live wildfire-smoke action planner for teens. NextStep Hacks 2026 Earth Forward. Built Sep 19-20 2026 in-window.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.6",
+    "@types/react": "19.3.0",
+    "typescript": "5.8.2"
+  }
+}
