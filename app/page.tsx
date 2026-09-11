@@ -191,7 +191,7 @@ export default function Page() {
 
         <footer style={{ marginTop: 26, fontSize: 12, opacity: 0.65, lineHeight: 1.6 }}>
           Educational only — not medical advice. On orange days and worse, follow local officials, school
-          closures, and AirNow guidance. Built Sep 19–20 2026 for NextStep Hacks Earth Forward by Preston, 16.
+          closures, and AirNow guidance. Built Sep 10 2026 for NextStep Hacks Earth Forward by Preston, 16.
           Prior planning notes Sep 11 (different contest, never submitted); all code here written in-window.
         </footer>
       </div>

@@ -22,7 +22,7 @@ and still detects live smoke regimes from Open-Meteo.
 
 ## Prior work disclosure (NextStep rules)
 Planning notes scaffolded Sep 11 for a different contest (never submitted, no logic).
-All code in this repo written Sep 19–20 2026 inside the NextStep window.
+All code in this repo written Sep 10 2026 inside the NextStep window.
 
 ## Safety
 Educational only. Not medical advice. On red/purple AQI days follow local officials,
