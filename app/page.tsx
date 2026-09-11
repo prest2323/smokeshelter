@@ -15,6 +15,16 @@ const GOLD = '#c9a84c';
 const CARD = '#15201b';
 const LINE = '#3a4a42';
 
+function pillColor(aqi: number | null): string {
+  if (aqi === null) return '#8a8a8a';
+  if (aqi <= 50) return '#7fd08c';
+  if (aqi <= 100) return '#e8c84a';
+  if (aqi <= 150) return '#ff9d6b';
+  if (aqi <= 200) return '#ff6b6b';
+  if (aqi <= 300) return '#c792ea';
+  return '#8e2f32';
+}
+
 function Sparkline({ readings }: { readings: AirReading[] }) {
   const ref = useRef<HTMLCanvasElement>(null);
   const draw = () => {
@@ -118,7 +128,7 @@ export default function Page() {
         <p style={{ color: GOLD, letterSpacing: 2, fontSize: 12, margin: '0 0 6px' }}>
           NEXTSTEP HACKS 2026 · EARTH FORWARD
         </p>
-        <h1 style={{ fontSize: 40, margin: '0 0 4px' }}>SmokeShelter</h1>
+        <h1 className="font-display" style={{ margin: '0 0 4px', fontWeight: 800 }}>SmokeShelter</h1>
         <p style={{ opacity: 0.85, margin: '0 0 18px' }}>
           Know smoke days. Act early. Live air → teen action plan → honest uncertainty.
         </p>
@@ -154,9 +164,22 @@ export default function Page() {
 
         {readings.length > 0 && (
           <>
-            <p style={{ fontSize: 13, opacity: 0.75, margin: '0 0 6px' }}>
-              {usedCity} · {dataLive ? 'LIVE Open-Meteo data' : 'Demo cache (offline mode — API unreachable, sample event)'} ·{' '}
-              current AQI {regime?.currentAqi ?? '?'} ({aqiBand(regime?.currentAqi ?? null)})
+            <p style={{ fontSize: 13, opacity: 0.85, margin: '0 0 6px' }}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  background: pillColor(regime?.currentAqi ?? null),
+                  color: '#14100a',
+                  fontWeight: 800,
+                  borderRadius: 999,
+                  padding: '2px 12px',
+                  marginRight: 8,
+                }}
+              >
+                AQI {regime?.currentAqi ?? '?'}
+              </span>
+              {usedCity} · {dataLive ? 'LIVE Open-Meteo data' : 'Demo cache (offline mode — sample event)'} ·{' '}
+              {aqiBand(regime?.currentAqi ?? null)}
             </p>
             <Sparkline readings={readings} />
           </>
@@ -175,15 +198,15 @@ export default function Page() {
           <>
             <LoopDiagram live={loop.live} dataLive={dataLive} />
             <section style={{ border: `1px solid ${LINE}`, borderRadius: 10, background: CARD, padding: '12px 16px', marginTop: 10 }}>
-              <h2 style={{ fontSize: 16, margin: '0 0 6px', color: GOLD }}>What this air means</h2>
+              <h2 style={{ fontSize: 16, margin: '0 0 6px', color: GOLD }}>01 · What this air means</h2>
               <p style={{ whiteSpace: 'pre-line', fontSize: 14, margin: 0, lineHeight: 1.55 }}>{loop.research}</p>
             </section>
             <section style={{ border: `1px solid ${LINE}`, borderRadius: 10, background: CARD, padding: '12px 16px', marginTop: 10 }}>
-              <h2 style={{ fontSize: 16, margin: '0 0 6px', color: GOLD }}>Your action plan for tomorrow</h2>
+              <h2 style={{ fontSize: 16, margin: '0 0 6px', color: GOLD }}>02 · Your action plan for tomorrow</h2>
               <p style={{ whiteSpace: 'pre-line', fontSize: 14, margin: 0, lineHeight: 1.55 }}>{loop.plan}</p>
             </section>
             <section style={{ border: `1px solid #6b4a2a`, borderRadius: 10, background: '#1d1712', padding: '12px 16px', marginTop: 10 }}>
-              <h2 style={{ fontSize: 16, margin: '0 0 6px', color: '#ffb46b' }}>Honest critic — read before trusting</h2>
+              <h2 style={{ fontSize: 16, margin: '0 0 6px', color: '#ffb46b' }}>03 · Honest critic — read before trusting</h2>
               <p style={{ whiteSpace: 'pre-line', fontSize: 14, margin: 0, lineHeight: 1.55 }}>{loop.critic}</p>
             </section>
           </>
