@@ -35,6 +35,16 @@ async function liveStep(step: string, context: string): Promise<string | null> {
 }
 
 export async function runLoop(regime: SmokeRegime, cityName: string): Promise<LoopResult> {
+  // Static hosts (GitHub Pages) have no /api routes — skip live attempts so
+  // the demo makes zero failed requests (clean console, instant reasoning).
+  if (typeof window !== 'undefined' && window.location.hostname.endsWith('github.io')) {
+    return {
+      research: cached.research as string,
+      plan: cached.plan as string,
+      critic: cached.critic as string,
+      live: false,
+    };
+  }
   const ctx =
     `${cityName} smoke check: current PM2.5 ${regime.currentPM25 ?? 'unknown'} ` +
     `(AQI ${regime.currentAqi ?? 'unknown'}), peak ${regime.peakPM25 ?? 'unknown'} ` +
